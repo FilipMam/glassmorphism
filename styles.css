@@ -1,0 +1,205 @@
+:root {
+    --green: #38ccae;
+    --dark: #1b1b1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    background: linear-gradient(to right top, var(--dark), var(--green));
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
+    padding: 32px 92px;
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: auto;
+}
+
+.bg__img {
+    position: absolute;
+}
+
+.bg__img--button {
+    top: 0;
+    right: 60%;
+    height: 30vh;
+    animation: slideDown 12s linear infinite;
+}
+
+.bg__img--dots {
+    top: 0;
+    left: 50%;
+    height: 75vh;
+    animation: rotate 25s linear infinite;
+}
+
+.bg__img--logo {
+    left: 0;
+    top: 50%;
+    width: 50%;
+    opacity: 0.25;
+    transform: translate(-50%, -50%);
+}
+
+header {
+    flex: 1;
+}
+
+h1 {
+    padding: 24px 0 12px;
+    font-size: 48px;
+}
+
+p {
+    padding-bottom: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+    position: relative;
+}
+
+a:after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--green);
+    background: linear-gradient(90deg, transparent, var(--green));
+    transition: width 0.3s;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    margin-right: 100px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+section:first-child {
+    margin-right: 100px;
+}
+
+.people {
+    height: 100%;
+    display: flex;
+    padding-bottom: 24px;
+}
+
+.person__img {
+    width: 200px;
+    height: 200px;
+    background: var(--green);
+    border: solid 3px #fff;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.person__img img {
+    width: 100%;
+}
+
+.person__name {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--green), rgba(255, 255, 255, 0.8));
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.person:last-child {
+    margin-left: 50px;
+    align-self: flex-end;
+}
+
+.person__img--filip img {
+    transform: translate(10px, -30px);
+}
+
+button {
+    width: 350px;
+    margin-top: 32px;
+    padding: 16px 0;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--green);
+    background: linear-gradient(to right top, var(--green), rgba(255, 255, 255, 0.6));
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button:focus {
+    outline-color: #fff;
+}
+
+button:after {
+    width: 50px;
+    height: 150%;
+    position: absolute;
+    left: -100px;
+    top: -25px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(20deg);
+    transition: transform 0.4s;
+}
+
+button:hover:after {
+    transform: translateX(500px) rotate(20deg);
+}
+
+
+@keyframes slideDown {
+    from {transform: translateY(-30vh)}
+    to {transform: translateY(100vh)}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
